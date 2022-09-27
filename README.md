@@ -25,3 +25,17 @@ This Python code demonstrates how to chain signatures. Run `user.py` to see how 
 > 'tomCruiseOfficial@gmail.com' ===> Not Authentic
 
 It uses RSA encryption on a SHA256 hash of the data, where the private key encrypts and the public key decrypts.
+
+## What Now?
+
+- Do the same thing in C#
+  - Frontend & backend camera app & RSA encrypt
+  - Saving to local storage
+  - Pull from local storage
+  - Frontend for sharing & add signatures
+  - Backend for sending to cloud memory
+  - Frontend for reading notifications
+  - Backend for receiving cloud memory from those you are following
+  - Authenticate backend
+- Map, profiles and places in database
+  - Remove notifications and instead 
