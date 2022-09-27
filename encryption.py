@@ -52,7 +52,7 @@ class RSAAlgorithm:
         print(
             f"RSA Algorithm Variables\n"
             f"=> public key:\n{self.key_public}\n"
-            f"=> space:\n{self.space}\n"
+            f"=> space:\n{self.space}"
         )
 
     def publish(self, sender_id) -> None:

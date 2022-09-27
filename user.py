@@ -18,8 +18,8 @@ class User(Sender, Consumer):
 
         while True:
             command = input(
-                'Send, consume or share last message? '
-                '(\'s,<queue>,<type: txt/img>,<content>\'/\'c,<queue>\'/\'sh,<queue>\'): '
+                '\nSend, consume or share last message?\n'
+                '(\'s,<queue>,<type: txt/img>,<content>\'/\'c,<queue>\'/\'sh,<queue>\'):\n'
             ).split(',')
 
             {

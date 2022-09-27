@@ -26,6 +26,47 @@ This Python code demonstrates how to chain signatures. Run `user.py` to see how 
 
 It uses RSA encryption on a SHA256 hash of the data, where the private key encrypts and the public key decrypts.
 
+## Demostration
+
+Command Line
+```commandline
+(pythonEnv) C:...\SignatureChaining> python user.py <name>↵
+RSA Algorithm Variables
+=> public key:
+4355759427...
+=> space:
+7445569906...
+
+Send, consume or share last message?
+('s,<queue>,<type: txt/img>,<content>'/'c,<queue>'/'sh,<queue>'):
+_
+```
+### Send, Consume & _Share_!
+#### Send to a queue, e.g., send `"Hello!"` to `queue.json`:
+```python
+s,queue.json,txt,Hello!
+```
+#### Consume  from queue:
+```python
+c,queue.json
+```
+=> Prints authenticities of sources (message must be _shared_ for `len(sources)>1`), e.g.:
+```python
+Message text:
+'Hello!'
+
+Message sources:
+Bob ===>         Authentic
+...              ...
+Originator ===>  Not Authentic
+```
+
+#### Share last-consumed message:
+```python
+sh,queue.json
+```
+=> Appends encrypted hash to the signed message being passed around on the queue
+
 ## What Now?
 
 - Do the same thing in C#
