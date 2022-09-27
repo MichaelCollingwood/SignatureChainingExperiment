@@ -1,16 +1,9 @@
-import json
 import copy
 from datetime import datetime
 from typing import List
 
-
-class SerialisableObject:
-    """Class allowing Message and SignedMessage to dumped to JSON"""
-
-    def to_json(self) -> str:
-        """Convert a custom object to a JSON object"""
-
-        return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
+from utilClasses.decodedImage import DecodedImage
+from utilClasses.serialisableObject import SerialisableObject
 
 
 class Message(SerialisableObject):
@@ -72,3 +65,20 @@ class ReceivedMessage:
     def __init__(self, signed_message: SignedMessage, authentic: List[bool]):
         self.signed_message: SignedMessage = signed_message
         self.authentic: List[bool] = authentic
+
+    def display_received_message(self) -> None:
+        """Print or plot message data and describe sources"""
+
+        message = self.signed_message.message
+        authentic = self.authentic
+
+        {
+            'txt': lambda d: print(f"\nMessage text:\n\'{d}\'"),
+            'img': lambda d: DecodedImage.display(decoded_bytes=d)
+        }[message.content_type](message.data)
+
+        print(
+            "\nMessage sources:\n" + '\n'.join(
+                [f"{s} ===>\t {'Authentic' if a else 'Not Authentic'}" for s, a in zip(message.sources, authentic)]
+            ) + '\n'
+        )

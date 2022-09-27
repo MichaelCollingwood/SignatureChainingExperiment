@@ -1,9 +1,8 @@
 import sys
 
-from Image import DecodedImage
-from message import Message
-from consumer import Consumer
-from sender import Sender
+from utilClasses.decodedImage import DecodedImage
+from messages import Message
+from transmission import Consumer, Sender
 
 
 class User(Sender, Consumer):

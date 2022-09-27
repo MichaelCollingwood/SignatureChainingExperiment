@@ -3,7 +3,7 @@
 
 Authenticity of data is a modern day issue. Who's deep-faked what and where did someone actually get an image is a real problem as disinformation is used like a tool.
 
-![](images/TomCruise.jpeg)
+![](imgs/TomCruise.jpeg)
 
 Humans may end up not being able to tell the difference between a deep-fake and reality, and individuals may never know whether an image is authentic or not, unless the source is known and can be validated.
 
@@ -11,7 +11,7 @@ Humans may end up not being able to tell the difference between a deep-fake and 
 
 Until the quantum age computing can't beat maths. Encryption to validate the chain of sources sharing data could help to eliminate false facts.
 
-![](images/RSAfundamentals.PNG)
+![](imgs/RSAfundamentals.PNG)
 (This diagram is for encrypting messages by RSA, though it is used dfferently here)\
 [Cambridge University Engineering Department, 2020]
 
@@ -46,6 +46,10 @@ _
 ```python
 s,queue.json,txt,Hello!
 ```
+This also works with images:
+```python
+s,queue.json,img,imgs/TomCruise.jpeg
+```
 #### Consume  from queue:
 ```python
 c,queue.json
@@ -60,6 +64,7 @@ Bob ===>         Authentic
 ...              ...
 Originator ===>  Not Authentic
 ```
+NB: If image => displays image instead of printing text.
 
 #### Share last-consumed message:
 ```python

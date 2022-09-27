@@ -2,28 +2,16 @@ from typing import Tuple
 import numpy as np
 from random import randint
 
-from utils.prime_number_generator import generate_prime_number
+from utils.numberOperations import inverse_in_space
+from utils.primeNumberGenerator import generate_prime_number
 
 
-def gcd_extended(a, b) -> Tuple[int, int, int]:
-    """gcd(a,b) = x*a + y*b"""
+def get_public_key(source) -> Tuple[int, int]:
+    """Get public key related to a source"""
 
-    if a == 0:
-        return b, 0, 1
-
-    gcd, x1, y1 = gcd_extended(b % a, a)
-    x = y1 - (b // a) * x1
-    y = x1
-
-    return gcd, x, y
-
-
-def inverse_in_space(x, space) -> int:
-    """x^-1 in Z_{space}"""
-
-    inverse = gcd_extended(space, x)[2]
-
-    return inverse
+    with open(f'publicKeys/{source}PublicKey.csv', 'r') as f:
+        key_public, space = f.read().split(',')
+        return int(key_public), int(space)
 
 
 class RSAAlgorithm:
@@ -58,7 +46,7 @@ class RSAAlgorithm:
     def publish(self, sender_id) -> None:
         """Share public key (and space) required for decrypting"""
 
-        publish_address = f"public_keys/{sender_id}_public_key.csv"
+        publish_address = f"publicKeys/{sender_id}PublicKey.csv"
         with open(publish_address, 'w') as f:
             f.write(f"{self.key_public}, {self.space}")
 
