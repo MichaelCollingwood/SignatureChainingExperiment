@@ -26,7 +26,7 @@ This Python code demonstrates how to chain signatures. Run `user.py` to see how 
 
 It uses RSA encryption on a SHA256 hash of the data, where the private key encrypts and the public key decrypts.
 
-## Demostration
+## Demonstration
 ```commandline
 (pythonEnv) C:...\SignatureChaining> python user.py <name>↵
 RSA Algorithm Variables
