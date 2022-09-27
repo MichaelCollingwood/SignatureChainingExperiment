@@ -27,8 +27,6 @@ This Python code demonstrates how to chain signatures. Run `user.py` to see how 
 It uses RSA encryption on a SHA256 hash of the data, where the private key encrypts and the public key decrypts.
 
 ## Demostration
-
-Command Line
 ```commandline
 (pythonEnv) C:...\SignatureChaining> python user.py <name>↵
 RSA Algorithm Variables
@@ -41,8 +39,7 @@ Send, consume or share last message?
 ('s,<queue>,<type: txt/img>,<content>'/'c,<queue>'/'sh,<queue>'):
 _
 ```
-### Send, Consume & _Share_!
-#### Send to a queue, e.g., send `"Hello!"` to `queue.json`:
+### Send to a queue, e.g., send `"Hello!"` to `queue.json`:
 ```python
 s,queue.json,txt,Hello!
 ```
@@ -50,7 +47,7 @@ This also works with images:
 ```python
 s,queue.json,img,imgs/TomCruise.jpeg
 ```
-#### Consume  from queue:
+### Consume  from queue:
 ```python
 c,queue.json
 ```
@@ -66,7 +63,7 @@ Originator ===>  Not Authentic
 ```
 NB: If image => displays image instead of printing text.
 
-#### Share last-consumed message:
+### Share last-consumed message:
 ```python
 sh,queue.json
 ```
