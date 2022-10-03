@@ -5,7 +5,14 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': 'Helvetica, Arial, sans-serif',
+    },
+    extend: {
+      backgroundImage: {
+        'turner': "url('../../public/burning_commons_turner.jpg')"
+      }
+    }
   },
   plugins: [],
 }
