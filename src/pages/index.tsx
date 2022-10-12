@@ -1,18 +1,18 @@
 import Head from 'next/head';
+import React from 'react';
 import { Navbar } from '../components/NavBar';
-import SimpleMap from '../components/Map';
+import { Map } from '../components/Map';
 
 export default function Home() {
+  
+
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>6°</title>
       </Head>
       <Navbar />
-      <div>
-        <SimpleMap />
-      </div>
+      <Map />
     </div>
   );
 }

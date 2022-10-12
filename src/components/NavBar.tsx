@@ -85,8 +85,6 @@ export const Navbar = () => {
                             <Link href='/'>
                                 <div>
                                     <Emoji symbol="👥" label="us"/>
-                                    <span className="pl-2 text-black">Who we are</span>
-                                    {/* On hover make text appear */}
                                 </div>
                             </Link>
                         </li>
