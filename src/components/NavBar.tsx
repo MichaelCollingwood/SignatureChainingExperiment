@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Emoji from './Emoji'
+import NavItem from './NavItem';
 import Title from './Title'
 
 export const Navbar = () => {
@@ -43,56 +44,10 @@ export const Navbar = () => {
                     active ? '' : 'hidden'
                 } w-full sm:inline-flex sm:flex-grow sm:w-auto`}
                 >
-                    <ul className='sm:inline-flex sm:flex-row sm:ml-auto sm:w-auto w-full sm:items-center items-start  flex flex-col sm:h-auto'>
-                        <li className="sm:inline-flex sm:w-auto w-full px-3 py-2 rounded text-white font-bold hover:bg-white hover:text-white">
-                            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar">
-                                <Emoji symbol="🌍" label="home"/>
-                            </button>
-                            <div id="dropdownNavbar" className="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                <ul className="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                                    <li>
-                                        <Link href='/'>
-                                            <a href="#" className="sm:inline-flex sm:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white hover:text-white">
-                                                Dashboard
-                                            </a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href='/'>
-                                            <a href="#" className="sm:inline-flex sm:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white hover:text-white">
-                                                Settings
-                                            </a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href='/'>
-                                            <a href="#" className="sm:inline-flex sm:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white hover:text-white">
-                                                Earnings
-                                            </a>
-                                        </Link>
-                                    </li>
-                                </ul>
-                                <div className="py-1">
-                                    <Link href='/'>
-                                        <a href="#" className="sm:inline-flex sm:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white hover:text-white">
-                                            Sign out
-                                        </a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="sm:inline-flex sm:w-auto w-full px-3 py-2 rounded text-white font-bold hover:bg-white hover:text-white">
-                            <Link href='/'>
-                                <div>
-                                    <Emoji symbol="👥" label="us"/>
-                                </div>
-                            </Link>
-                        </li>
-                        <li className="sm:inline-flex sm:w-auto w-full px-3 py-2 rounded text-white font-bold hover:bg-white hover:text-white">
-                            <Link href='/'>
-                                <Emoji symbol="📞" label="contact"/>
-                            </Link>
-                        </li>
+                    <ul className='text-l inline-flex sm:ml-auto sm:w-auto w-full sm:items-center items-start sm:h-auto'>
+                        <NavItem emoji="🌍" label="Messages" />
+                        <NavItem emoji="👥" label="Profiles" />
+                        <NavItem emoji="🌍" label="World" />
                     </ul>
                 </div>
             </nav>
