@@ -45,9 +45,9 @@ export const Navbar = () => {
                 } w-full sm:inline-flex sm:flex-grow sm:w-auto`}
                 >
                     <ul className='text-l inline-flex sm:ml-auto sm:w-auto w-full sm:items-center items-start sm:h-auto'>
-                        <NavItem emoji="🌍" label="Messages" />
-                        <NavItem emoji="👥" label="Profiles" />
-                        <NavItem emoji="🌍" label="World" />
+                        <NavItem emoji="🌍" where="Messages" />
+                        <NavItem emoji="👥" where="Profiles" />
+                        <NavItem emoji="🌍" where="World" />
                     </ul>
                 </div>
             </nav>
