@@ -10,7 +10,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'turner': "url('../../public/burning_commons_turner.jpg')"
+        'turner': "url('../../public/burning_commons_turner.jpg')",
+        'bg-header': "url('../../public/Logo.PNG')",
       }
     }
   },

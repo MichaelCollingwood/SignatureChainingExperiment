@@ -7,6 +7,9 @@ export default function Home() {
     <div>
       <Header />
       <Navbar />
+      <div className='bg-slate-200 p-2'>
+        Info
+      </div>
     </div>
   );
 }
