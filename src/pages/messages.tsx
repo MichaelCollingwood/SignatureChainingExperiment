@@ -9,13 +9,15 @@ type Message = {
 }
 
 export default function Messages() {
-    const [messages, setMessages] = useState<Message[]>([{text: 'hello', sources:['a']}, {text: 'world', sources:['a', 'b']}])
+    const [messages, setMessages] = useState<Message[]>([
+        {text: 'hello', sources:['a']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}, {text: 'world', sources:['a', 'b']}
+    ])
 
     return (
-        <div>
+        <div className='flex flex-col h-screen'>
             <Header />
             <Navbar />
-            <ul className='bg-slate-200 p-2'>
+            <ul className='bg-slate-200 m-4 rounded p-2 overflow-y-scroll'>
                 {messages.map((message) => 
                     <Message text={message.text} sources={message.sources}/>
                 )}
