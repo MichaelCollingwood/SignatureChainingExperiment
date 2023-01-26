@@ -1,4 +1,4 @@
-import { MessageContent } from "../pages/messages"
+import { MessageContent } from "../pages/messages/[peerId]"
 import Message from "./Message"
 
 type MessagesProps = {
