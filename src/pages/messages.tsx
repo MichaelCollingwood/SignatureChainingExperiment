@@ -15,11 +15,14 @@ type UserMessageRepository = {
 export default function MessagePage() {
     const [userMessageRepository, setMessageRepository] = useState<UserMessageRepository>()
 
+    // useEffect fetch statement...
+    // run server which initialises python server
+
     return (
         <div className='flex flex-col h-screen'>
             <Header />
             <Navbar />
-            <Messages messages={userMessageRepository[peerId]}/>
+            <Messages messages={userMessageRepository?.[peerId]}/>
         </div>
     );
 }
