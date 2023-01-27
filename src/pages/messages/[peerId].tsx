@@ -12,7 +12,7 @@ export type MessageContent = {
 
 export default function MessagePage() {
     const router = useRouter();
-    const [messages, setMessages] = useState<MessageContent[]>()
+    const [messages, setMessages] = useState<MessageContent[]>([])
 
     useEffect(() => {
         fetchMessages(router.query['peerId'] as string)
