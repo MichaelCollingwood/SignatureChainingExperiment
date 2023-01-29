@@ -1,3 +1,5 @@
+import Divider from "@mui/material/Divider";
+import List from "@mui/material/List";
 import { MessageContent } from "../pages/messages/[peerId]"
 import Message from "./Message"
 
@@ -8,10 +10,8 @@ type MessagesProps = {
 export function Messages({ messages }: MessagesProps) {
 
     return (
-        <ul className='bg-slate-200 m-4 rounded p-2 overflow-y-scroll'>
-            {messages && messages.map((message) => 
-                <Message text={message.text} sources={message.sources}/>
-            )}
-        </ul>
+        <List sx={{ width: '100%', maxWidth: 320, bgcolor: 'background.paper' }}>
+            { messages && messages.map((message) => <Message {...message}/>) }
+        </List>
     )
 }
