@@ -10,8 +10,8 @@ type MessagesProps = {
 export function Messages({ messages }: MessagesProps) {
 
     return (
-        <List sx={{ width: '100%', maxWidth: 320, bgcolor: 'background.paper' }}>
-            { messages && messages.map((message) => <Message {...message}/>) }
+        <List sx={{ width: '100%', maxWidth: 520, bgcolor: 'background.paper' }}>
+            { messages && [...messages].reverse().map((message) => <Message {...message}/>) }
         </List>
     )
 }
